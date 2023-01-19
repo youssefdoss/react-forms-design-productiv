@@ -15,7 +15,7 @@ function TopTodo({ todos }) {
   // let top = todos.reduce(
   //     (acc, cur) => cur.priority < acc.priority ? cur : acc, todos[0]);
   const prioTodo = todos.reduce(
-    (top, curr) => (top.priority || todos[0]) > curr.priority ? top : curr);
+    (top, curr) => curr.priority < (top.priority || todos[0]) ? curr : top);
 
   return <Todo  todo={prioTodo}/>;
 }

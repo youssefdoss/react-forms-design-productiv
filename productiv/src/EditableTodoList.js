@@ -21,7 +21,7 @@ function EditableTodoList({todos, update, remove}) {
             update={update}
             remove={remove}
           />
-        ))};
+        ))}
       </div>
   );
 }
