@@ -43,12 +43,12 @@ function EditableTodo({todo, remove, update}) {
           <div className="mb-3">
             <div className="float-end text-sm-end">
               <button
-                  className={`EditableTodo-toggle btn-link btn btn-sm ${todo.id}`}
+                  className={"EditableTodo-toggle btn-link btn btn-sm"}
                   onClick={toggleEdit}>
                 Edit
               </button>
               <button
-                  className={`EditableTodo-delBtn btn-link btn btn-sm text-danger ${todo.id}`}
+                  className={"EditableTodo-delBtn btn-link btn btn-sm text-danger"}
                   onClick={handleDelete}>
                 Del
               </button>

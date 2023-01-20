@@ -3,18 +3,17 @@ import { render } from "@testing-library/react";
 import EditableTodoList from "./EditableTodoList";
 import { testTodos } from "./_testCommon";
 
-//TODO: mock functions to test & fix names
 describe("EditableTodoList", function () {
   it("renders without crashing", function () {
-    render(<TodoApp initialTodos={testTodos}/>);
+    render(<EditableTodoList todos={testTodos}/>);
   });
 
-  it("contains EditableTodoList", function () {
-    const result  = render(<TodoApp initialTodos={testTodos}/>);
+  it("displays all todos", function () {
+    const result  = render(<EditableTodoList todos={testTodos}/>);
     const container = result.container;
     expect(container.getElementsByClassName("EditableTodoList").length).toEqual(1);
     expect(result.queryByText("Write some code")).toBeInTheDocument();
-  })
-
-
+    expect(result.queryByText("Cook something healthy")).toBeInTheDocument();
+    expect(result.queryByText("In bed by 11:15")).toBeInTheDocument();
+  });
 });
